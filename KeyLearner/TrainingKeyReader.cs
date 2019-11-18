@@ -20,7 +20,8 @@ namespace KeyLearner
                     while (!reader.EndOfStream)
                     {
                         var line = reader.ReadLine();
-                        var fragments = line.Split('-');
+                        var produceKey = line.Split(':');
+                        var fragments = produceKey[1].Split('-');
                         var subKeysList = new List<SubKey>();
 
                         foreach (var fragment in fragments)
@@ -31,7 +32,7 @@ namespace KeyLearner
 
                         var key = new FullKey
                         {
-                            SubkeyNumber = subKeysList.Count,
+                            SubkeyLength = subKeysList.Count,
                             SubKeys = subKeysList
                         };
                         keys.Add(key);

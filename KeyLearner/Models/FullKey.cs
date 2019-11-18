@@ -6,7 +6,7 @@ namespace KeyLearner.Models
 {
     public class FullKey
     {
-        public int SubkeyNumber { get; set; }
+        public int SubkeyLength { get; set; }
         public List<SubKey> SubKeys { get; set; }
 
         public override string ToString()
